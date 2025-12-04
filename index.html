@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEL Probationary Engineer - CSE Syllabus Checklist</title>
+    
+
+
+
     <style>
         :root {
             --color-primary: #2d7078;
@@ -411,9 +415,49 @@
                 overflow-x: auto;
             }
         }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #00d0ff;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .nav-links a {
+                margin-left: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">BEL</div>
+
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </nav>
     <div class="container">
         <div class="header">
             <h1>BEL Probationary Engineer - CSE</h1>
