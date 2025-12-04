@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEL Probationary Engineer - CSE Syllabus Checklist</title>
+    <style>
+        :root {
+            --color-primary: #2d7078;
+            --color-primary-hover: #235a60;
+            --color-primary-active: #1a4248;
+            --color-secondary: rgba(45, 112, 120, 0.12);
+            --color-secondary-hover: rgba(45, 112, 120, 0.2);
+            --color-text: #133435;
+            --color-text-secondary: #627080;
+            --color-bg: #fcfcf9;
+            --color-surface: #fffff5;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-success: #208f95;
+            --color-warning: #a84f2f;
+            --color-error: #c0152f;
+            --color-focus-ring: rgba(45, 112, 120, 0.4);
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --radius-base: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 14px;
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--color-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-20);
+        }
+
+        .header {
+            margin-bottom: var(--space-24);
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: var(--space-16);
+        }
+
+        .header h1 {
+            margin: 0 0 var(--space-8) 0;
+            font-size: 28px;
+            color: var(--color-text);
+        }
+
+        .header p {
+            margin: 0;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .progress-section {
+            display: flex;
+            gap: var(--space-20);
+            margin-bottom: var(--space-24);
+            flex-wrap: wrap;
+        }
+
+        .progress-card {
+            flex: 1;
+            min-width: 200px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            padding: var(--space-16);
+            text-align: center;
+        }
+
+        .progress-card h3 {
+            margin: 0 0 var(--space-8) 0;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .progress-percent {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 0;
+        }
+
+        .progress-bar-wrapper {
+            width: 100%;
+            height: 8px;
+            background: rgba(45, 112, 120, 0.1);
+            border-radius: 4px;
+            margin-top: var(--space-12);
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--color-primary);
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .controls {
+            display: flex;
+            gap: var(--space-12);
+            margin-bottom: var(--space-20);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-8) var(--space-16);
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--color-secondary);
+            color: var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-secondary-hover);
+        }
+
+        .btn:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--color-focus-ring);
+        }
+
+        .tabs {
+            display: flex;
+            gap: var(--space-8);
+            margin-bottom: var(--space-20);
+            border-bottom: 2px solid var(--color-border);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: var(--space-12) var(--space-16);
+            border: none;
+            background: transparent;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        .tab-btn:hover {
+            color: var(--color-text);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .subject-section {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-16);
+            overflow: hidden;
+        }
+
+        .subject-header {
+            padding: var(--space-16);
+            background: rgba(45, 112, 120, 0.05);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .subject-header:hover {
+            background: rgba(45, 112, 120, 0.08);
+        }
+
+        .subject-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin: 0;
+            flex: 1;
+        }
+
+        .subject-meta {
+            display: flex;
+            gap: var(--space-12);
+            align-items: center;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        .progress-badge {
+            background: rgba(32, 143, 149, 0.1);
+            color: var(--color-success);
+            padding: var(--space-4) var(--space-8);
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .toggle-icon {
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .toggle-icon.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .topic-list {
+            padding: var(--space-16);
+            display: none;
+        }
+
+        .topic-list.expanded {
+            display: block;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-12);
+            padding: var(--space-10) 0;
+            border-bottom: 1px solid rgba(94, 82, 64, 0.1);
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            height: 20px;
+            margin-top: 2px;
+        }
+
+        .topic-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--color-primary);
+            margin: 0;
+        }
+
+        .topic-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .topic-label {
+            flex: 1;
+            padding: var(--space-4) var(--space-8);
+            cursor: pointer;
+            user-select: none;
+            color: var(--color-text);
+        }
+
+        .topic-item input[type="checkbox"]:checked + .topic-label {
+            color: var(--color-text-secondary);
+            text-decoration: line-through;
+        }
+
+        .difficulty {
+            display: inline-block;
+            font-size: 11px;
+            padding: var(--space-4) var(--space-8);
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .difficulty.high {
+            background: rgba(192, 21, 47, 0.1);
+            color: var(--color-error);
+        }
+
+        .difficulty.medium {
+            background: rgba(168, 75, 47, 0.1);
+            color: var(--color-warning);
+        }
+
+        .difficulty.low {
+            background: rgba(32, 143, 149, 0.1);
+            color: var(--color-success);
+        }
+
+        .subtopic-parent {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .expand-subtopic {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            display: inline-block;
+            margin-left: var(--space-8);
+        }
+
+        .subtopic-parent:hover .expand-subtopic {
+            color: var(--color-primary);
+        }
+
+        .subtopics {
+            margin-left: var(--space-24);
+            border-left: 2px solid var(--color-border);
+            padding-left: var(--space-12);
+        }
+
+        .subtopic-text {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        .topic-item input[type="checkbox"]:checked + .topic-label.subtopic-text {
+            color: var(--color-text-secondary);
+            text-decoration: line-through;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-16);
+            padding: var(--space-20);
+            background: var(--color-surface);
+            border-radius: var(--radius-base);
+            border: 1px solid var(--color-border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-12);
+            }
+
+            .progress-section {
+                flex-direction: column;
+                gap: var(--space-12);
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .tabs {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BEL Probationary Engineer - CSE</h1>
+            <p>Exam: CBT (120 mins) | 125 Questions (100 Technical + 25 General Aptitude) | Target: 95+ Score</p>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-card">
+                <h3>Overall Progress</h3>
+                <p class="progress-percent" id="overall-percent">0%</p>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="overall-bar"></div>
+                </div>
+            </div>
+            <div class="progress-card">
+                <h3>Technical Topics</h3>
+                <p class="progress-percent" id="technical-percent">0%</p>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="technical-bar"></div>
+                </div>
+            </div>
+            <div class="progress-card">
+                <h3>General Aptitude</h3>
+                <p class="progress-percent" id="aptitude-percent">0%</p>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="aptitude-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="expandAll()">Expand All</button>
+            <button class="btn btn-secondary" onclick="collapseAll()">Collapse All</button>
+            <button class="btn btn-secondary" onclick="clearAllChecks()">Reset Progress</button>
+            <button class="btn btn-secondary" onclick="downloadProgress()">Download Progress</button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'technical')">Technical Subjects (100Q)</button>
+            <button class="tab-btn" onclick="switchTab(event, 'aptitude')">General Aptitude (25Q)</button>
+        </div>
+
+        <!-- Technical Subjects Tab -->
+        <div id="technical" class="tab-content active">
+            <!-- Operating System -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Operating System</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="os-count">0</span>/<span id="os-total">48</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list expanded">
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Process Management & Scheduling</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Process vs Thread</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Scheduling Algorithms (FCFS, SJF, RR, Priority)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Context Switching Overhead</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Preemptive vs Non-preemptive</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Memory Management (Paging, Segmentation)</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Logical vs Physical Address</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Paging Structure & Page Tables</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Segmentation Model</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Virtual Memory Concepts</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Memory Protection</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Deadlock & Synchronization</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Deadlock Conditions</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Deadlock Detection & Prevention</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Bankers Algorithm</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Race Conditions</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Critical Sections</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">File System & I/O Management</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">File Organization Methods</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Directory Structures</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Access Control Lists</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">I/O Buffering</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Disk Scheduling (FCFS, SSTF, SCAN)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Virtual Memory</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Page Replacement Algorithms (LRU, FIFO, Optimal)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Thrashing</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Working Set</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Demand Paging</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Process States & Context Switching</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Process State Diagram</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">PCB (Process Control Block)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Context Switching Cost</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Process Communication</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Semaphores & Mutexes</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Binary Semaphores</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Counting Semaphores</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Mutex vs Semaphore</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Monitor Concept</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Inter-process Communication (IPC)</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Message Passing</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Shared Memory</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Pipes & Named Pipes</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="os-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Sockets</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Management System -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Database Management System (DBMS)</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="dbms-count">0</span>/<span id="dbms-total">45</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list expanded">
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">ER Model & Normalization</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Entity-Relationship Diagram</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Attributes & Keys</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">1NF, 2NF, 3NF, BCNF</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Denormalization Trade-offs</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">SQL Queries (JOIN, Subqueries, Aggregates)</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">INNER, LEFT, RIGHT, FULL JOINs</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Subqueries (Scalar, Row, Table)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Correlated Subqueries</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Aggregate Functions (SUM, AVG, COUNT, MAX, MIN)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">GROUP BY & HAVING</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">SET Operations (UNION, INTERSECT, EXCEPT)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">ACID Properties & Transactions</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Atomicity</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Consistency</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Isolation</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Durability</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Transaction Control (COMMIT, ROLLBACK, SAVEPOINT)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Indexing & B+ Trees</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Primary & Secondary Indexing</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">B-Tree Properties</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">B+ Tree Structure</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Index Selection</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Hash Indexing</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Concurrency Control & Locking</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Pessimistic Locking</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Optimistic Locking</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Two-Phase Locking (2PL)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Deadlock in Database</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Isolation Levels</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Relational Algebra & Calculus</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Selection, Projection, Union</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Intersection, Difference, Cartesian Product</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Join Operations</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Relational Calculus</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Tuple Calculus</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Query Optimization & Execution Plans</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Query Parser</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Query Optimizer</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Cost Estimation</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Execution Plan Generation</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Join Optimization</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Functional Dependencies & Keys</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Functional Dependency Definition</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Super Keys, Candidate Keys, Primary Keys</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Foreign Keys</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Closure of Attributes</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Armstrong's Axioms</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">File Organization & Storage Structures</label>
+                        <span class="difficulty low">Low</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Heap File</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Sequential File</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Hash File</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Clustered vs Non-clustered</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="dbms-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Record Organization</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Networks -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Computer Networks</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="cn-count">0</span>/<span id="cn-total">60</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list expanded">
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">OSI & TCP/IP Model Layers</label>
+                        <span class="difficulty low">Low</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Layer 1: Physical</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Layer 2: Data Link</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Layer 3: Network</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Layer 4: Transport</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Layer 5-7: Application Layers</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">TCP/IP vs OSI Comparison</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Routing Protocols (RIP, OSPF, BGP)</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Distance Vector Routing</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Link State Routing</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Routing Information Protocol (RIP)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Open Shortest Path First (OSPF)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Border Gateway Protocol (BGP)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Router Operation</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">TCP/UDP & Transport Layer</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">TCP Connection Establishment (3-way handshake)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">TCP Connection Termination (4-way handshake)</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">UDP Connectionless Protocol</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Port Numbers & Well-known Ports</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Multiplexing & Demultiplexing</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Connection States</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">IP Addressing & Subnetting</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">IPv4 Address Classes</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Subnet Masks</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">CIDR Notation</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Subnetting Calculations</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">IPv6 Basics</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Private vs Public IP</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">DNS, DHCP, HTTP/HTTPS</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Domain Name System (DNS)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">DNS Resolution Process</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">DHCP Protocol</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">HTTP Methods (GET, POST, PUT, DELETE)</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">HTTPS & SSL/TLS</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">HTTP Status Codes</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Congestion Control & Flow Control</label>
+                        <span class="difficulty high">High</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Sliding Window Protocol</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Congestion Window</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Slow Start</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Congestion Avoidance</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Fast Retransmit & Recovery</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">TCP Tahoe & Reno</label>
+                            <span class="difficulty high">High</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Error Detection & Correction</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Parity Check</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">CRC (Cyclic Redundancy Check)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Hamming Code</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Error Correction Codes</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Checksum</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">MAC Addressing & ARP</label>
+                        <span class="difficulty low">Low</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">MAC Address Format</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Address Resolution Protocol (ARP)</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">ARP Cache Poisoning</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Switch Operation</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">VLANs & Network Security</label>
+                        <span class="difficulty medium">Medium</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Virtual LAN Concept</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">VLAN Tagging (802.1Q)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Firewalls</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Access Control Lists (ACL)</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Network Segmentation</label>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="topic-item subtopic-parent">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">QoS & Bandwidth Management</label>
+                        <span class="difficulty low">Low</span>
+                        <span class="expand-subtopic">▶</span>
+                    </div>
+                    <div class="subtopics" style="display:none;">
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Quality of Service Metrics</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Traffic Shaping</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Traffic Policing</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Differentiated Services (DiffServ)</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                        <div class="topic-item">
+                            <div class="checkbox-wrapper"><input type="checkbox" class="cn-topic" onchange="updateProgress()"></div>
+                            <label class="topic-label subtopic-text">Priority Queuing</label>
+                            <span class="difficulty low">Low</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Structures & Algorithms -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Data Structures & Algorithms</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="dsa-count">0</span>/<span id="dsa-total">11</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list expanded">
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Arrays, Linked Lists, Stacks & Queues</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Trees (Binary, BST, AVL, B-Trees)</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Graphs & Graph Traversal (DFS, BFS)</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Sorting (Merge, Quick, Heap, Bubble)</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Searching (Binary, Linear)</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Dynamic Programming</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Greedy Algorithms</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Recursion & Backtracking</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Hash Tables & Hashing</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Time & Space Complexity Analysis</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="dsa-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Shortest Path (Dijkstra, Bellman-Ford)</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Architecture & Programming -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Computer Fundamentals & Programming</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="prog-count">0</span>/<span id="prog-total">7</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list expanded">
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Digital Logic & Boolean Algebra</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Number Systems & Conversions</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Computer Organization & Architecture</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">CPU Scheduling & Pipelining</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Memory Hierarchies & Cache</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">C Programming Basics</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="prog-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Pointers, Arrays, Strings in C</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- General Aptitude Tab -->
+        <div id="aptitude" class="tab-content">
+            <!-- Logical Reasoning -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Logical Reasoning (8-10Q)</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="reason-count">0</span>/<span id="reason-total">8</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Coding-Decoding</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Blood Relations & Family Trees</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Syllogisms & Logic</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Analogies & Classification</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Series Completion & Patterns</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Puzzles & Arrangements</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Direction & Sense Tests</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="reason-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Decision Making & Venn Diagrams</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quantitative Aptitude -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">Quantitative Aptitude (8-10Q)</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="quant-count">0</span>/<span id="quant-total">9</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Time & Work, Pipes & Cisterns</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Ratio, Proportion & Percentages</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Profit, Loss & Discount</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Average & Numbers</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Speed, Distance & Time</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Simple & Compound Interest</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Permutations & Combinations</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Probability</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="quant-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Data Interpretation</label>
+                        <span class="difficulty high">High</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English Language -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">English Language (5-7Q)</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="eng-count">0</span>/<span id="eng-total">7</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Reading Comprehension</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Synonyms & Antonyms</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Grammar & Tenses</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Sentence Correction & Formation</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Idioms & Phrases</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">One Word Substitution</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="eng-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Cloze Test & Error Spotting</label>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Awareness -->
+            <div class="subject-section">
+                <div class="subject-header" onclick="toggleSubject(this)">
+                    <h3 class="subject-title">General Awareness (3-5Q)</h3>
+                    <div class="subject-meta">
+                        <span class="progress-badge"><span id="gk-count">0</span>/<span id="gk-total">5</span></span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="gk-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Current Affairs & Recent Events</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="gk-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Indian History & Politics</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="gk-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Geography & National Symbols</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="gk-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Science & Technology</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                    <div class="topic-item">
+                        <div class="checkbox-wrapper"><input type="checkbox" class="gk-topic" onchange="updateProgress()"></div>
+                        <label class="topic-label">Sports & Awards</label>
+                        <span class="difficulty low">Low</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const categories = {
+            os: { count: 0, total: 48 },
+            dbms: { count: 0, total: 45 },
+            cn: { count: 0, total: 60 },
+            dsa: { count: 0, total: 11 },
+            prog: { count: 0, total: 7 },
+            reason: { count: 0, total: 8 },
+            quant: { count: 0, total: 9 },
+            eng: { count: 0, total: 7 },
+            gk: { count: 0, total: 5 }
+        };
+
+        function toggleSubject(header) {
+            const list = header.nextElementSibling;
+            const icon = header.querySelector('.toggle-icon');
+            list.classList.toggle('expanded');
+            icon.classList.toggle('collapsed');
+        }
+
+        function switchTab(e, tabName) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            e.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        function updateProgress() {
+            Object.keys(categories).forEach(cat => {
+                const checkboxes = document.querySelectorAll(`.${cat}-topic`);
+                const checked = document.querySelectorAll(`.${cat}-topic:checked`).length;
+                categories[cat].count = checked;
+                document.getElementById(`${cat}-count`).textContent = checked;
+            });
+
+            updateProgressBars();
+        }
+
+        function updateProgressBars() {
+            const technical = ['os', 'dbms', 'cn', 'dsa', 'prog'];
+            const aptitude = ['reason', 'quant', 'eng', 'gk'];
+
+            let technicalChecked = 0, technicalTotal = 0;
+            technical.forEach(cat => {
+                technicalChecked += categories[cat].count;
+                technicalTotal += categories[cat].total;
+            });
+
+            let aptitudeChecked = 0, aptitudeTotal = 0;
+            aptitude.forEach(cat => {
+                aptitudeChecked += categories[cat].count;
+                aptitudeTotal += categories[cat].total;
+            });
+
+            const totalChecked = technicalChecked + aptitudeChecked;
+            const totalAll = technicalTotal + aptitudeTotal;
+
+            const technicalPercent = technicalTotal > 0 ? Math.round((technicalChecked / technicalTotal) * 100) : 0;
+            const aptitudePercent = aptitudeTotal > 0 ? Math.round((aptitudeChecked / aptitudeTotal) * 100) : 0;
+            const overallPercent = totalAll > 0 ? Math.round((totalChecked / totalAll) * 100) : 0;
+
+            document.getElementById('technical-percent').textContent = technicalPercent + '%';
+            document.getElementById('aptitude-percent').textContent = aptitudePercent + '%';
+            document.getElementById('overall-percent').textContent = overallPercent + '%';
+
+            document.getElementById('technical-bar').style.width = technicalPercent + '%';
+            document.getElementById('aptitude-bar').style.width = aptitudePercent + '%';
+            document.getElementById('overall-bar').style.width = overallPercent + '%';
+
+            localStorage.setItem('belSyllabusProgress', JSON.stringify(categories));
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.topic-list').forEach(list => {
+                list.classList.add('expanded');
+            });
+            document.querySelectorAll('.toggle-icon').forEach(icon => {
+                icon.classList.remove('collapsed');
+            });
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.topic-list').forEach(list => {
+                list.classList.remove('expanded');
+            });
+            document.querySelectorAll('.toggle-icon').forEach(icon => {
+                icon.classList.add('collapsed');
+            });
+        }
+
+        function clearAllChecks() {
+            if (confirm('Are you sure? This will reset all your progress.')) {
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                Object.keys(categories).forEach(cat => categories[cat].count = 0);
+                updateProgress();
+            }
+        }
+
+        function downloadProgress() {
+            const progressText = generateProgressReport();
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(progressText));
+            element.setAttribute('download', 'BEL_CSE_Progress_' + new Date().toISOString().slice(0,10) + '.txt');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function generateProgressReport() {
+            let report = 'BEL Probationary Engineer - CSE Syllabus Preparation Report\n';
+            report += '='.repeat(60) + '\n';
+            report += 'Generated: ' + new Date().toLocaleString() + '\n\n';
+
+            const technical = ['os', 'dbms', 'cn', 'dsa', 'prog', 'sec'];
+            const aptitude = ['reason', 'quant', 'eng', 'gk'];
+
+            report += 'TECHNICAL SUBJECTS (100Q):\n';
+            report += '-'.repeat(40) + '\n';
+            const subjects = {
+                os: 'Operating System',
+                dbms: 'Database Management System',
+                cn: 'Computer Networks',
+                dsa: 'Data Structures & Algorithms',
+                prog: 'Computer Fundamentals & Programming'
+            };
+
+            technical.forEach(cat => {
+                const pct = Math.round((categories[cat].count / categories[cat].total) * 100);
+                report += `${subjects[cat]}: ${categories[cat].count}/${categories[cat].total} (${pct}%)\n`;
+            });
+
+            report += '\nGENERAL APTITUDE (25Q):\n';
+            report += '-'.repeat(40) + '\n';
+            const aptSubjects = {
+                reason: 'Logical Reasoning',
+                quant: 'Quantitative Aptitude',
+                eng: 'English Language',
+                gk: 'General Awareness'
+            };
+
+            aptitude.forEach(cat => {
+                const pct = Math.round((categories[cat].count / categories[cat].total) * 100);
+                report += `${aptSubjects[cat]}: ${categories[cat].count}/${categories[cat].total} (${pct}%)\n`;
+            });
+
+            const totalChecked = Object.values(categories).reduce((a, b) => a + b.count, 0);
+            const totalAll = Object.values(categories).reduce((a, b) => a + b.total, 0);
+            const overallPct = Math.round((totalChecked / totalAll) * 100);
+
+            report += '\n' + '='.repeat(60) + '\n';
+            report += `OVERALL PROGRESS: ${totalChecked}/${totalAll} topics (${overallPct}%)\n`;
+            report += '='.repeat(60) + '\n';
+
+            return report;
+        }
+
+        // Toggle subtopics expansion
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('expand-subtopic')) {
+                const subtopics = e.target.closest('.topic-item').nextElementSibling;
+                if (subtopics && subtopics.classList.contains('subtopics')) {
+                    subtopics.style.display = subtopics.style.display === 'none' ? 'block' : 'none';
+                    e.target.style.transform = subtopics.style.display === 'none' ? 'rotate(0deg)' : 'rotate(90deg)';
+                }
+            }
+        });
+
+        // Load progress from localStorage on page load
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('belSyllabusProgress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                Object.keys(data).forEach(cat => {
+                    categories[cat] = data[cat];
+                });
+                
+                Object.keys(categories).forEach(cat => {
+                    const checkboxes = document.querySelectorAll(`.${cat}-topic`);
+                    checkboxes.forEach((cb, idx) => {
+                        if (idx < categories[cat].count) {
+                            cb.checked = true;
+                        }
+                    });
+                });
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+</html>
